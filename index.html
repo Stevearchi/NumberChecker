@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Number Checker</title>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>
@@ -16,34 +18,41 @@
         crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <script src="script.js"></script>    
+    <script src="numbcheck.js"></script>
 </head>
 
 <body>
-<div class="jumbotron text-center">
-    <h1>Number Guesser</h1>
-    <h2>See if you can guess the number!</h2>
-</div>
-<div class="container">
-    <div class="row border bg-light">
-        <h3 class="col p-2 pl-3">Computer Pick</h3>
+    <div class="jumbotron text-center">
+        <h1>Number Guesser</h1>
+        <h2>See if you can guess the number!</h2>
+        <h2>Wins:         <span id="wins">0</span></h2>
+        <h2>Losses:         <span id="losses">0</span></h2>
+        <button id='reset' class='btn btn-warning mt-3'><h2>Play again</h2></button>
     </div>
-    <div class="row border p-4">
-        <h1 class="mx-auto" id="compGuess">dfdf</h1>
+    <div class="container">
+        <div class="row border bg-light">
+            <h3 class="col p-2 pl-3">Computer Pick</h3>
+        </div>
+        <div class="row border p-4">
+            <h1 class="mx-auto" id="compNum"></h1>
+        </div>
+        <div class="row border bg-light mt-2">
+            <h3 class="col p-2 pl-3">You Pick</h3>
+        </div>
+        <div class="row border p-4">
+            <div class="mx-auto">
+                <button id="b1" class="btn btn-danger mr-1"><h1>1</h1></button>
+                <button id="b2" class="btn btn-danger mr-1"><h1>2</h1></button>
+                <button id="b3" class="btn btn-danger mr-1"><h1>3</h1></button>
+                <button id="b4" class="btn btn-danger mr-1"><h1>4</h1></button>
+            </div>
+        </div>
+        <div class="row border bg-light mt-2">
+            <h3 class="col p-2 pl-3">Result</h3>
+        </div>
+        <div id="result" class="row border p-4">
+        </div>
     </div>
-    <div class="row border bg-light mt-2">
-        <h3 class="col p-2 pl-3">You Pick</h3>
-    </div>
-    <div class="row border p-4">
-        <h1 class="mx-auto" id="compGuess">dfdf</h1>
-    </div>
-    <div class="row border bg-light mt-2">
-        <h3 class="col p-2 pl-3">Result</h3>
-    </div>
-    <div class="row border p-4">
-        <h1 class="mx-auto" id="compGuess">dfdf</h1>
-    </div>
-</div>  
 </body>
 
 </html>
