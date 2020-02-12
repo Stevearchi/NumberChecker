@@ -1,12 +1,15 @@
 $(document).ready(function() {
-    let wins = 0, losses = 0, staleGame = false;
+    let wins = 0, losses = 0, staleGame = false;  
+    // staleGame will be set to true after the user has guessed.  
+    // This prevents them from continually hitting correct number button and increasing their score
     let compNum;
     let userGuess;
     let resultMessage = $("<h1>").addClass("mx-auto");
+    // random number between 1 and 4
     let random = () => {
         compNum = Math.floor(Math.random()*4) +1;      
     };
-
+    // compare user guess with randomly generated number
     let compare = () => {
         if (staleGame === false){
             $("#compNum").text(compNum)
@@ -17,7 +20,8 @@ $(document).ready(function() {
             staleGame = true;
         }
     };
-
+    // Increase wins or losses and change HTML to reflect this
+    // Change the message in the result section
     let win = () => {
         $("#wins").text(++wins);
         resultMessage.text("Great guess, you got it! ");
@@ -39,6 +43,8 @@ $(document).ready(function() {
         $("#result").html(resultMessage);
         random();
     }
+
+    //click functions for number buttons
     $("#b1").on("click", function() {
         userGuess = 1;
         compare();
@@ -59,6 +65,7 @@ $(document).ready(function() {
         console.log("In reset click event")
         reset();
     });
+
     reset(); // initiate first game
     
 });
